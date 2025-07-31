@@ -34,10 +34,10 @@ public class CommentServiceImpl implements CommentService{
     @Override
     public CommentDto createComment(CommentRequestDto dto) {
         Task task = taskRepository.findById(dto.taskId())
-                .orElseThrow(() -> new IllegalArgumentException("Task not found"));
+                .orElseThrow(() -> new ResourceNotFoundException("Task not found"));
 
         User author = userRepository.findById(dto.authorId())
-                .orElseThrow(() -> new IllegalArgumentException("Author not found"));
+                .orElseThrow(() -> new ResourceNotFoundException("Author not found"));
 
         Comment comment = new Comment();
         comment.setContent(dto.content());
