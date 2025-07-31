@@ -7,20 +7,22 @@ import com.klm.taskmanagement.task.repository.TaskRepository;
 import com.klm.taskmanagement.user.entity.Role;
 import com.klm.taskmanagement.user.entity.User;
 import com.klm.taskmanagement.user.repository.UserRepository;
-import io.cucumber.java.en.*;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.http.*;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.stereotype.Component;
 import org.springframework.test.context.ContextConfiguration;
 
 import java.time.LocalDate;
 import java.util.Map;
 import java.util.Set;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 /**
  * Cucumber step definitions for Task management features.
